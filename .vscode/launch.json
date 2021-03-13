@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "TUM Mono Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Examples/Monocular/mono_tum_vi",
+            "args": ["${workspaceFolder}/Vocabulary/ORBvoc.txt", 
+                "${workspaceFolder}/Examples/Monocular/TUM_512.yaml",
+                "/data/TUM_VI/euroc/512_16/dataset-room1_512_16/mav0/cam0/data",
+                "${workspaceFolder}/Examples/Monocular/TUM_TimeStamps/dataset-room1_512.txt",
+                "dataset-room1_512_mono"
+            ],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Launch TUM RGB-D",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Examples/RGB-D/rgbd_tum",
+            "args": ["${workspaceFolder}/Vocabulary/ORBvoc.txt", 
+                "${workspaceFolder}/Examples/RGB-D/TUM1.yaml", 
+                ""],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build_debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
